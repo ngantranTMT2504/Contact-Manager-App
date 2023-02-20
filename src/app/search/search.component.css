@@ -1,0 +1,11 @@
+input , button{
+    margin: 10px  3px;
+    border: 1px solid;
+    border-radius: 2px;
+}
+.addContact{
+    background-color: rgb(3, 138, 106);
+}
+.addContact i {
+    color: aliceblue;
+}

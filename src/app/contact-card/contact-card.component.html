@@ -1,0 +1,20 @@
+<div >
+    <app-search (searchChange)="searchTextChange($event)"></app-search>
+</div>
+<ng-container *ngFor="let contact of contacts" >
+    <div class="contactCard" *ngIf="searchText === '' || contact.name.toLowerCase().includes(searchText)">
+        <div class="avatar">
+            <img [src]="contact.image" alt="avatar">
+        </div>
+        <div class="information">
+            <div class="name">Name: {{contact.name}}</div>
+            <div class="mobile">Mobile: {{contact.mobile}}</div>
+            <div class="email">Email: {{contact.email}}</div>
+        </div>
+        <div class="button">
+            <i class="fa-solid fa-eye"></i>
+            <i class="fa-solid fa-pen-to-square"></i>
+            <i class="fa-sharp fa-solid fa-trash"></i>
+        </div>
+    </div>
+</ng-container>
