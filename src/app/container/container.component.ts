@@ -11,10 +11,8 @@ export class ContainerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  contactManager: string = "Contact Manager"
-  viewContact: string = "View Contact"
-  editContact: string = "Edit Contact"
-  addContact: string = "Add Contact";
+  
+  
 
   
 

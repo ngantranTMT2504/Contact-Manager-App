@@ -9,6 +9,7 @@ import { ContainerComponent } from './container/container.component';
 import { ContactCardComponent } from './contact-card/contact-card.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
+import { EditContactComponent } from './edit-contact/edit-contact.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     DescribeComponent,
     ContainerComponent,
     ContactCardComponent,
-    SearchComponent
+    SearchComponent,
+    EditContactComponent
   ],
   imports: [
     BrowserModule,

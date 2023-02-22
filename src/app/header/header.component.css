@@ -1,9 +1,12 @@
 .header{
     width: 100%;
-    height: 38px;
-    background-color: rgb(96, 96, 96);
-    font-size: large;
+    height: 45px;
+    background-color:var(--greencolor);
+    font-size: 24px;
+}
+ .header span #text{
+    color: white;
 }
 i{
-    padding: 5px 5px 5px 30px;
+    padding: 5px 5px 10px 50px;
 }

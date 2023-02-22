@@ -1,0 +1,30 @@
+.edit-contact{
+    display: flex;
+    
+    background-color: var(--privatecolor);
+}
+.input-box input{
+    display: block;
+    width: 500px;
+    height: 35px;
+    margin: 10px;
+}
+button{
+    margin: 5px;
+}
+.input-box #update{
+    background-color: var(--greencolor);
+    color: white;
+    border-radius: 5px;
+}
+.input-box #close{
+    background-color: rgb(146, 25, 25);
+    color: white;
+    border-radius: 5px;
+}
+.avatar{
+    margin: 30px;
+}
+.avatar img{
+    border-radius: 50%;
+}

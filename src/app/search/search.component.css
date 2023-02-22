@@ -1,10 +1,14 @@
 input , button{
     margin: 10px  3px;
     border: 1px solid;
-    border-radius: 2px;
+    border-radius: 5px;
+}
+input{
+    width: 300px;
 }
 .addContact{
-    background-color: rgb(3, 138, 106);
+    background-color:var(--greencolor);
+    color: white;
 }
 .addContact i {
     color: aliceblue;
