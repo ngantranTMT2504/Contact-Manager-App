@@ -2,7 +2,7 @@
     <app-search (searchChange)="searchTextChange($event)"></app-search>
 </div>
 
-<div class="mainPage">
+<div class="mainPage" >
     <div class="card"  *ngFor="let contact of contacts" >
         <div  class="contactCard"*ngIf="searchText === '' || contact.name.toLowerCase().includes(searchText)">
             <div class="avatar">

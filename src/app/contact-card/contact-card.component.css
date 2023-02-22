@@ -53,3 +53,6 @@ button{
     background-color: var(--redcolor);
     color: white;
 }
+.changeDisplay{
+    display: flex;
+}

@@ -1,0 +1,21 @@
+
+.input{
+    margin: 20px 0;
+}
+.input input{
+    display: block;
+    width: 500px;
+    height: 35px;
+    margin: 10px;
+}
+button{
+    margin: 0 10px;
+    border-radius: 5px;
+    color: white;
+}
+#add{
+    background-color: var(--greencolor);
+}
+#close{
+    background-color: var(--redcolor);
+}

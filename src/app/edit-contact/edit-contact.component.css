@@ -1,6 +1,6 @@
 .edit-contact{
-    display: flex;
-    
+    display: grid;
+    grid-template-columns: auto auto;
     background-color: var(--privatecolor);
 }
 .input-box input{
@@ -12,12 +12,12 @@
 button{
     margin: 5px;
 }
-.input-box #update{
-    background-color: var(--greencolor);
+#update{
+    background-color: var(--bluecolor);
     color: white;
     border-radius: 5px;
 }
-.input-box #close{
+#close{
     background-color: rgb(146, 25, 25);
     color: white;
     border-radius: 5px;

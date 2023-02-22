@@ -10,6 +10,8 @@ import { ContactCardComponent } from './contact-card/contact-card.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { EditContactComponent } from './edit-contact/edit-contact.component';
+import { ViewContactComponent } from './view-contact/view-contact.component';
+import { AddContactComponent } from './add-contact/add-contact.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { EditContactComponent } from './edit-contact/edit-contact.component';
     ContainerComponent,
     ContactCardComponent,
     SearchComponent,
-    EditContactComponent
+    EditContactComponent,
+    ViewContactComponent,
+    AddContactComponent
   ],
   imports: [
     BrowserModule,
