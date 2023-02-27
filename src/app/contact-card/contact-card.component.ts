@@ -13,12 +13,12 @@ export class ContactCardComponent implements OnInit {
   }
 
   contacts = [
-    {name: "Kalin Tran", mobile: "07894561352", email: "kalin@gmail.com", image: '/assets/images/avatar1.png'},
-    {name: "John Constantine", mobile: "07894561352", email: "john@gmail.com", image: '/assets/images/avatar2.png'},
-    {name: "Johnathan Ngo", mobile: "07894561352", email: "johnathan@gmail.com", image: '/assets/images/avatar3.png'},
-    {name: "Scristian", mobile: "07894561352", email: "Scristian@gmail.com", image: '/assets/images/avatar4.jpg'},
-    {name: "Karma Edison", mobile: "07894561352", email: "Karma@gmail.com", image: '/assets/images/avatar5.png'},
-    {name: "Scristian", mobile: "07894561352", email: "Scristian@gmail.com", image: '/assets/images/avatar6.png'},
+    {name: "Kalin Tran", mobile: "0789456135", email: "kalin@gmail.com", image: '/assets/images/avatar1.png'},
+    {name: "John Constantine", mobile: "0831245321", email: "john@gmail.com", image: '/assets/images/avatar2.png'},
+    {name: "Johnathan Ngo", mobile: "0789352894", email: "johnathan@gmail.com", image: '/assets/images/avatar3.png'},
+    {name: "Scristian", mobile: "0381967211", email: "Scristian@gmail.com", image: '/assets/images/avatar4.jpg'},
+    {name: "Karma Edison", mobile: "0753666203", email: "Karma@gmail.com", image: '/assets/images/avatar5.png'},
+    {name: "Lucian", mobile: "0831255478", email: "Lucian@gmail.com", image: '/assets/images/avatar6.png'},
   ]
 
   searchText:string = '';
@@ -30,9 +30,4 @@ export class ContactCardComponent implements OnInit {
     this.searchText= searchValue;
   }
 
-  changeEditPage() {
-    this.hiddenEditPage = false;
-    this.hiddenMainPage = true;
-
-  }
 }

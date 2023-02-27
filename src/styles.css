@@ -3,12 +3,20 @@
 
 :root{
     --privatecolor: rgb(248, 228, 248);
-    --greencolor: rgb(4, 139, 144);
-    --redcolor:rgb(146, 25, 25);
-    --bluecolor:rgb(0, 68, 255);
-    --yellowcolor:rgb(255, 179, 0);
+    --greencolor: rgb(60, 145, 148);
 }
 
 body {
     font-family:'Chakra Petch', sans-serif !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-raised-button{
+    margin: 0 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--greencolor);
+    padding: 5px;
 }

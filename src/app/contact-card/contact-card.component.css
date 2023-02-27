@@ -1,13 +1,26 @@
 .mainPage{
     display:grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
     gap: 20px;
     align-content: center;
     padding: 20px 0;
 }
+.changeDisplay{
+    display: flex;
+    flex-direction: column;
+    gap: none;
+    padding: 0px;
+    margin-right: 50%;
+}
 .card{
     display: block;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.changeDisplayCard{
+    border: none;
+    margin: 0;
+    padding: 0;
+    
 }
 .contactCard{
     display: flex;
@@ -32,26 +45,15 @@
     border: 1px solid rgb(208, 207, 207, 0.6);
 }
 
-.button i{
+button {
     display: block;
-    margin: 12px 0;
-    padding: 8px;
-    border-radius: 5px;
+    margin: 10px 0;
+    padding: 7px;
 }
-button{
-    border: none;
-    background-color: white;
-}
-.button  #view{
-    background-color: var(--yellowcolor);
-}
-.button  #edit{
-    background-color: var(--bluecolor);
-    color: white;
-}
-.button  #delete{
-    background-color: var(--redcolor);
-    color: white;
+
+.changeDisplayButton{
+    display: flex;
+    flex-direction: column;
 }
 .changeDisplay{
     display: flex;

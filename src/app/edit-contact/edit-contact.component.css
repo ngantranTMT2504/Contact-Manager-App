@@ -12,16 +12,6 @@
 button{
     margin: 5px;
 }
-#update{
-    background-color: var(--bluecolor);
-    color: white;
-    border-radius: 5px;
-}
-#close{
-    background-color: rgb(146, 25, 25);
-    color: white;
-    border-radius: 5px;
-}
 .avatar{
     margin: 30px;
 }

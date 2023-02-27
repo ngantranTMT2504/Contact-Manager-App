@@ -1,7 +1,4 @@
 <div class="search-box">
-    <input type="text" [(ngModel)] = 'searchValue'>
-    <div class="btn">
-        <button class="search" (click)="onSearchValueChange()">Search</button>
-        <button class="addContact"><i class="fa-solid fa-circle-plus"></i> New </button>
-    </div>
+    <input type="text" [(ngModel)] = 'searchValue' (input)="onSearchValueChange()" >
+    <button class="mat-raised-button"> <i class="fa-solid fa-plus"></i> New </button>
 </div>
