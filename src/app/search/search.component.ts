@@ -13,6 +13,7 @@ export class SearchComponent implements OnInit {
   }
 
   searchValue: string = '';
+  
 
   @Output() searchChange:EventEmitter<string> = new EventEmitter<string>();
 
@@ -20,4 +21,5 @@ export class SearchComponent implements OnInit {
     this.searchChange.emit(this.searchValue);
   }
 
+  
 }

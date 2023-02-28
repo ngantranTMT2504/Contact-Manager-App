@@ -1,14 +1,11 @@
-<div class="view">
+<div class="view" *ngIf="contact !== undefined">
     <div class="image">
-        <img src="/assets/images/avatar1.png" alt="Avatar">
+        <img [src]=contact?.image alt="Avatar">
     </div>
     <div class="information">
-        <div><p>Name: </p></div>
-        <div><p>Mobile: </p></div>
-        <div><p>Email:</p></div>
-        <div><p>Company:</p></div>
-        <div><p>Work:</p></div>
-        <div><p>Group Name:</p></div>
+        <div><p>Name: {{contact?.name}}</p></div>
+        <div><p>Mobile: {{contact?.mobile}}</p></div>
+        <div><p>Email: {{contact?.email}}</p></div>
     </div>
     <div class="back">
         <button class="mat-raised-button"><i class="fa-solid fa-circle-arrow-left"></i> Back</button>

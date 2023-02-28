@@ -1,18 +1,12 @@
 <div class="addContact">
     <div class="input">
-        <mat-form-field appearance="fill">
-            <mat-label>Input</mat-label>
-            <input matInput>
-        </mat-form-field>
-        <input type="text" placeholder="Photo URL: ">
-        <input type="text" placeholder="Mobile: ">
-        <input type="text" placeholder="Mail: ">
-        <input type="text" placeholder="Company: ">
-        <input type="text" placeholder="Work: ">
-        <input type="text" placeholder="Group: ">
+        <input type="text" placeholder="Name: "  [(ngModel)]="contactName">
+        <input type="text" placeholder="Mobile: " [(ngModel)]="contactMobile">
+        <input type="text" placeholder="Email: " [(ngModel)]="contactEmail">
+        <input type="text" placeholder="Photo URL: " [(ngModel)]="contactImage">
     </div>
     <div class="button">
-        <button class="mat-raised-button">Create</button>
+        <button class="mat-raised-button" (click)="addContact()">Create</button>
         <button class="mat-raised-button">Close</button>
     </div>
 </div>

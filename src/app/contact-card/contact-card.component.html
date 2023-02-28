@@ -1,22 +1,25 @@
 <div>
-    <app-search (searchChange)="searchTextChange($event)"></app-search>
-</div>
-<div class="mainPage" [ngClass]="{changeDisplay:searchText != ''}">
-    <div class="card" *ngFor="let contact of contacts" [ngClass]="{changeDisplayCard :searchText != ''}">
-        <div class="contactCard" *ngIf="searchText === ''||(contact.name.toLowerCase().includes(searchText)||contact.mobile.includes(searchText))">
-            <div class="avatar">
-                <img [src]="contact.image" alt="avatar">
-            </div>
-            <div class="information">
-                <div class="name">Name: {{contact.name}}</div>
-                <div class="mobile">Mobile: {{contact.mobile}}</div>
-                <div class="email">Email: {{contact.email}}</div>
-            </div>
-            <div class="button" [ngClass]="{changeDisplayButton :searchText != ''}">
-                <button class="mat-raised-button"><i id="view" class="fa-solid fa-eye"></i></button>
-                <button class="mat-raised-button"><i id="edit" class="fa-solid fa-pen"></i></button>
-                <button class="mat-raised-button"><i id="delete" class="fa-solid fa-trash"></i></button>
+    <div>
+        <app-search (searchChange)="searchTextChange($event)"></app-search>
+    </div>
+    <div class="mainPage" [ngClass]="{changeDisplay:searchText != ''}">
+        <div class="card" *ngFor="let contact of contacts" [ngClass]="{changeDisplayCard :searchText != ''}">
+            <div class="contactCard" *ngIf="searchText === ''||(contact.name.toLowerCase().includes(searchText)||contact.mobile.includes(searchText))">
+                <div class="avatar">
+                    <img [src]="contact.image" alt="avatar">
+                </div>
+                <div class="information">
+                    <div class="name">Name: {{contact.name}}</div>
+                    <div class="mobile">Mobile: {{contact.mobile}}</div>
+                    <div class="email">Email: {{contact.email}}</div>
+                </div>
+                <div class="button" [ngClass]="{changeDisplayButton :searchText != ''}">
+                    <button class="mat-raised-button" (click)="showDetail(contact)"><i id="view" class="fa-solid fa-eye"></i></button>
+                    <button class="mat-raised-button"><i id="edit" class="fa-solid fa-pen"></i></button>
+                    <button class="mat-raised-button"><i id="delete" class="fa-solid fa-trash"></i></button>
+                </div>
             </div>
         </div>
     </div>
+
 </div>
