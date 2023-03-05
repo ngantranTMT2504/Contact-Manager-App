@@ -4,7 +4,6 @@ import { Test } from '../common.utils';
 import {MatDialog} from '@angular/material/dialog';
 import { ViewContactComponent } from '../view-contact/view-contact.component';
 import { EditContactComponent } from '../edit-contact/edit-contact.component';
-import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-contact-card',
