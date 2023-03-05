@@ -9,19 +9,10 @@ export class Test {
         {name: "Johnathan Ngo", mobile: "0789352894", email: "johnathan@gmail.com", image: '/assets/images/avatar3.png'},
         {name: "Scristian", mobile: "0381967211", email: "Scristian@gmail.com", image: '/assets/images/avatar4.jpg'}
     ]
-
-    static contact:{name: string, mobile:string, email:string, image:string};
-
+    
     static addContact(name: string, mobile:string, email:string, image:string){
         Test.contacts.push({name: name, mobile: mobile, email: email, image:image})
     }
-
-    // static onViewButtonClick= new EventEmitter<{name: string, mobile: string, email: string, image: string}>();
-
-    // static showContactDetails(contact:{ name: string, mobile: string, email: string, image: string}){
-    //     this.onViewButtonClick.emit(contact);
-    // }
-
     static deleteContact(name: string, mobile:string, email:string, image:string){
         Test.contacts.pop()
     }

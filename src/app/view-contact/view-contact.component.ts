@@ -11,10 +11,8 @@ import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog
 export class ViewContactComponent implements OnInit {
   contact: ICard;
 
-  constructor(
-    public dialogRef: MatDialogRef<ViewContactComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-  ){
+  constructor(public dialogRef: MatDialogRef<ViewContactComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any){
     this.contact = data;
   }
 

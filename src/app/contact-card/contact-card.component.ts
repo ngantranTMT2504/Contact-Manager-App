@@ -3,6 +3,8 @@ import { ICard } from '../app.models';
 import { Test } from '../common.utils';
 import {MatDialog} from '@angular/material/dialog';
 import { ViewContactComponent } from '../view-contact/view-contact.component';
+import { EditContactComponent } from '../edit-contact/edit-contact.component';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-contact-card',
@@ -11,7 +13,7 @@ import { ViewContactComponent } from '../view-contact/view-contact.component';
 })
 export class ContactCardComponent implements OnInit {
   
-  contacts: {name: string, mobile: string, email: string, image: string}[] = [];
+  contacts: ICard[] = [];
 
   constructor(public dialog: MatDialog) {}
 
@@ -29,6 +31,16 @@ export class ContactCardComponent implements OnInit {
   showDetail(data: ICard){
     const dialogRef = this.dialog.open(ViewContactComponent, {
       data: data,
+    });
+  }
+  showEditdetail(data: ICard){
+    const dialogRef = this.dialog.open(EditContactComponent, {
+      data: data,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      result = data;
+      console.log(result);
     });
   }
 }

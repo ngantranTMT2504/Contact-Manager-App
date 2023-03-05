@@ -1,19 +1,11 @@
 .edit-contact{
-    display: grid;
-    grid-template-columns: auto auto;
     background-color: var(--privatecolor);
-}
-.input-box input{
-    display: block;
-    width: 500px;
-    height: 35px;
-    margin: 10px;
 }
 button{
     margin: 5px;
 }
 .avatar img{
     border-radius: 50%;
-    height: 150px;
-    width: 150px;
+    height: 180px;
+    width: 180px;
 }

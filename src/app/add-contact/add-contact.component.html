@@ -9,8 +9,9 @@
             <input matInput [(ngModel)]="contactMobile" required="">
         </mat-form-field>
         <mat-form-field appearance="fill">
-            <mat-label>What's your Email?</mat-label>
-            <input matInput [(ngModel)]="contactEmail" required="">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>What's your picture?</mat-label>

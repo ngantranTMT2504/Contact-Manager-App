@@ -1,16 +1,32 @@
 <div class="edit-contact">
     <div class="input-box">
-        <input type="text" placeholder="Name">
-        <input type="text" placeholder="Image">
-        <input type="text" placeholder="Mobile">
-        <input type="text" placeholder="Mail">
-    </div>
-    <div class="avatar">
-        <img src="/assets/images/avatar1.png" alt="Avatar">
+        <div class="avatar">
+            <img src={{contact.image}} alt="Avatar">
+        </div>
+        <div>
+            <mat-form-field >
+                <input matInput value="{{contact.name}}" [(ngModel)]="name" >
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field >
+                <input matInput value="{{contact.mobile}}" [(ngModel)]="mobile">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field >
+                <input matInput value="{{contact.email}}" [(ngModel)]="email">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field >
+                <input matInput value="{{contact.image}}" [(ngModel)]="image">
+            </mat-form-field>
+        </div>
     </div>
     <div class="button">
-        <button class="mat-raised-button">Update</button>
-        <button class="mat-raised-button">Close</button>
+        <button class="mat-raised-button" (click)="onNoClick()">Update</button>
+        <!-- <button class="mat-raised-button" mat-dialog-close>Close</button> -->
     </div>
 </div>
 
