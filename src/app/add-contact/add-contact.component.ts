@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactService } from '../Service/contact.service';
+import { Test } from '../common.utils';
+
+
 
 @Component({
   selector: 'app-add-contact',
@@ -12,12 +14,14 @@ export class AddContactComponent implements OnInit {
   contactEmail: string = '';
   contactImage: string = '';
 
-  constructor(private contactService: ContactService) {}
+  constructor() {}
 
   ngOnInit(): void {
   }
 
   addContact() {
-    this.contactService.addContact(this.contactName,this.contactMobile,this.contactEmail,this.contactImage)
+    Test.addContact(this.contactName,this.contactMobile,this.contactEmail,this.contactImage);
+    console.log(Test.contacts);
+    
   }
 }

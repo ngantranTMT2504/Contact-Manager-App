@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ContactService } from '../Service/contact.service';
+import { Component, Inject, OnInit} from '@angular/core';
+import { ICard } from '../app.models';
+import { Test } from '../common.utils';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-view-contact',
@@ -7,15 +9,19 @@ import { ContactService } from '../Service/contact.service';
   styleUrls: ['./view-contact.component.css']
 })
 export class ViewContactComponent implements OnInit {
+  contact: ICard;
 
-  constructor(private contactService: ContactService) { }
-
-  contact?:{name: string, mobile: string, email: string, image: string};
-
-  ngOnInit(): void {
-    this.contactService.onViewButtonClick.subscribe((data:{name: string, mobile: string, email: string, image: string}) => {
-      this.contact = data
-    })
+  constructor(
+    public dialogRef: MatDialogRef<ViewContactComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+  ){
+    this.contact = data;
   }
 
+  ngOnInit(): void {
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }

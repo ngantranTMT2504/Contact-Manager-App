@@ -3,7 +3,9 @@ input{
     border: 1px solid;
     border-radius: 5px;
     padding: 3px;
-}
-input{
     width: 300px;
 }
+button{
+    margin: 0 10px;
+}
+

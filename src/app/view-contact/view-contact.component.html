@@ -1,13 +1,15 @@
-<div class="view" *ngIf="contact !== undefined">
+
+<p mat-dialog-title > Detail Contact </p>
+<div mat-dialog-content >
     <div class="image">
-        <img [src]=contact?.image alt="Avatar">
+        <img [src]="contact.image" alt="Avatar">
     </div>
     <div class="information">
-        <div><p>Name: {{contact?.name}}</p></div>
-        <div><p>Mobile: {{contact?.mobile}}</p></div>
-        <div><p>Email: {{contact?.email}}</p></div>
+        <p>Name: {{contact.name}}</p>
+        <p>Mobile: {{contact.mobile}}</p>
+        <p>Email: {{contact.email}}</p>
     </div>
     <div class="back">
-        <button class="mat-raised-button"><i class="fa-solid fa-circle-arrow-left"></i> Back</button>
+        <button class="mat-raised-button" mat-dialog-close><i class="fa-solid fa-circle-arrow-left"></i> Back</button>
     </div>
 </div>

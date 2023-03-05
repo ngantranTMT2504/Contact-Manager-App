@@ -12,9 +12,8 @@
 button{
     margin: 5px;
 }
-.avatar{
-    margin: 30px;
-}
 .avatar img{
     border-radius: 50%;
+    height: 150px;
+    width: 150px;
 }

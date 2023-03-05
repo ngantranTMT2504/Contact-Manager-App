@@ -1,12 +1,24 @@
 <div class="addContact">
-    <div class="input">
-        <input type="text" placeholder="Name: "  [(ngModel)]="contactName">
-        <input type="text" placeholder="Mobile: " [(ngModel)]="contactMobile">
-        <input type="text" placeholder="Email: " [(ngModel)]="contactEmail">
-        <input type="text" placeholder="Photo URL: " [(ngModel)]="contactImage">
+    <div class="form">
+        <mat-form-field appearance="fill">
+            <mat-label>What's your name?</mat-label>
+            <input matInput #input maxlength="10" [(ngModel)]="contactName" required="">
+        </mat-form-field>
+        <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>What's your telephone number?</mat-label>
+            <input matInput [(ngModel)]="contactMobile" required="">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>What's your Email?</mat-label>
+            <input matInput [(ngModel)]="contactEmail" required="">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>What's your picture?</mat-label>
+            <input matInput [(ngModel)]="contactImage" required="">
+        </mat-form-field>
     </div>
-    <div class="button">
-        <button class="mat-raised-button" (click)="addContact()">Create</button>
-        <button class="mat-raised-button">Close</button>
-    </div>
+    <mat-dialog-actions>
+        <button mat-raised-button (click)="addContact()">Create</button>
+        <button mat-raised-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
 </div>
