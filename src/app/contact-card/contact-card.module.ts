@@ -4,7 +4,7 @@ import { ContactCardComponent } from './contact-card.component';
 import { SearchComponent } from './shared/search/search.component';
 import { EditContactComponent } from '../edit-contact/edit-contact.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddContactComponent } from '../add-contact/add-contact.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ViewContactComponent } from '../view-contact/view-contact.component';
@@ -25,7 +25,8 @@ import { MaterialModule } from '../material/material.module';
     MatDialogModule,
     FormsModule,
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
   ]
 })
 export class ContactCardModule { }

@@ -13,7 +13,7 @@ export class Test {
     static addContact(name: string, mobile:string, email:string, image:string){
         Test.contacts.push({name: name, mobile: mobile, email: email, image:image})
     }
-    static deleteContact(name: string, mobile:string, email:string, image:string){
-        Test.contacts.pop()
+    static deleteContact(contact: ICard){
+        this.contacts.splice(this.contacts.indexOf(contact),1);
     }
 }

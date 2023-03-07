@@ -42,4 +42,7 @@ export class ContactCardComponent implements OnInit {
       console.log(result);
     });
   }
+  deleteContact(data: ICard){
+    Test.deleteContact(data)
+  }
 }

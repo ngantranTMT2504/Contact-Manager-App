@@ -1,25 +1,25 @@
 <div class="addContact">
-    <div class="form">
+    <div class="form" [formGroup]="reactiveForm">
         <mat-form-field appearance="fill">
             <mat-label>What's your name?</mat-label>
-            <input matInput #input maxlength="10" [(ngModel)]="contactName" required="">
+            <input matInput #input maxlength="10" required="" formControlName="name">
         </mat-form-field>
         <mat-form-field hintLabel="Max 10 characters" appearance="fill">
             <mat-label>What's your telephone number?</mat-label>
-            <input matInput [(ngModel)]="contactMobile" required="">
+            <input matInput required="" formControlName="mobile">
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Enter your email</mat-label>
-            <input matInput placeholder="pat@example.com" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            <input matInput placeholder="pat@example.com" required formControlName="email">
+            <mat-error *ngIf="reactiveForm.get('email')?.valid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>What's your picture?</mat-label>
-            <input matInput [(ngModel)]="contactImage" required="">
+            <input matInput required="" formControlName="email">
         </mat-form-field>
     </div>
     <mat-dialog-actions>
         <button mat-raised-button (click)="addContact()">Create</button>
-        <button mat-raised-button mat-dialog-close>Close</button>
+        <button mat-raised-button mat-dialog-close type="submit">Close</button>
     </mat-dialog-actions>
 </div>

@@ -1,9 +1,12 @@
+.main{
+    width: 100%;
+}
 .mainPage{
     display:grid;
     grid-template-columns: 50% 50%;
-    gap: 20px;
+    gap: 1rem;
     align-content: center;
-    padding: 20px 0;
+    padding: 1rem 0;
 }
 .card{
     display: block;
@@ -12,62 +15,58 @@
 .contactCard{
     display: flex;
     background-color: white;
-    padding: 10px ;
+    padding: 0.5rem ;
 }
 .avatar img{
-    height: 150px;
-    width: 150px;
-    border: 2px solid;
+    height: 23vh;
+    width: 23vh;
+    border: 0.2rem solid;
     border-radius: 50%;
 }
 .information{
     display: block;
     position: relative;
-    margin: 20px 40px;
+    margin: 1rem 2rem;
     color: var(--greencolor);
 }
 .information div{
-    width: 280px;
-    padding: 5px 10px;
-    border: 1px solid rgba(128, 128, 128, 0.338);
+    width: 23vw;
+    padding: 0.25rem 0.5rem;
+    border: 0.1rem solid rgba(128, 128, 128, 0.338);
 }
 
 button {
     display: block;
-    margin: 10px 0;
+    margin: 0.5rem 0;
     padding: 0px;
     
 }
-@media (max-width : 968px){
+
+@media (max-width :1024px){
     .mainPage{
         display:grid;
         grid-template-columns: 100%;
-        gap: 20px;
-        align-content: center;
-        
     }
-    .avatar img{
-        height: 50px;
-        width: 50px;
-        border: 1px solid;
-        border-radius: 50%;
+    .card{
+        width: 65vw;
     }
-    .information div{
-        width: 70px;
-        padding: 5px;
-        border: 1px solid rgba(128, 128, 128, 0.338);
-        font-size: x-small;
-    }
-    button {
-        display: block;
-        margin:  0;
-        padding: 0px;
-        color: var(--redcolor);
-    }
-    button i{
-        font-size: x-small;
-        margin: 0;
-       
-    }
-
+    @media (max-width: 968px) {
+        .card{
+            width: 85vw;
+        }
+        .avatar img{
+            height: 23vw;
+            width: 23vw;
+        }
+        .information{
+            margin: 0 1rem;
+        }
+        .information div{
+            font-size: 0.7rem;
+            width: 25vw;
+        }
+        button{
+            font-size: 0.7rem;
+        }
+    }    
 }

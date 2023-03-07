@@ -1,26 +1,26 @@
 <div class="edit-contact">
-    <div class="input-box">
-        <div class="avatar">
-            <img src={{contact.image}} alt="Avatar">
-        </div>
+    <div class="avatar">
+        <img src={{contact.image}} alt="Avatar">
+    </div>
+    <div class="input-box" [formGroup]="reactiveForm">
         <div>
             <mat-form-field >
-                <input matInput value="{{contact.name}}" [(ngModel)]="name" >
+                <input matInput formControlName="name" >
             </mat-form-field>
         </div>
         <div>
             <mat-form-field >
-                <input matInput value="{{contact.mobile}}" [(ngModel)]="mobile">
+                <input matInput formControlName="mobile" >
             </mat-form-field>
         </div>
         <div>
             <mat-form-field >
-                <input matInput value="{{contact.email}}" [(ngModel)]="email">
+                <input matInput formControlName="email" >
             </mat-form-field>
         </div>
         <div>
             <mat-form-field >
-                <input matInput value="{{contact.image}}" [(ngModel)]="image">
+                <input matInput formControlName="image" >
             </mat-form-field>
         </div>
     </div>
