@@ -1,30 +1,36 @@
 import { Component, OnInit} from '@angular/core';
 import { ICard } from '../app.models';
-import { Test } from '../common.utils';
 import {MatDialog} from '@angular/material/dialog';
 import { ViewContactComponent } from '../view-contact/view-contact.component';
 import { EditContactComponent } from '../edit-contact/edit-contact.component';
+import { ContactService } from '../Service/contact.service';
 
 @Component({
   selector: 'app-contact-card',
   templateUrl: './contact-card.component.html',
-  styleUrls: ['./contact-card.component.css']
+  styleUrls: ['./contact-card.component.css'],
+  providers: [ContactService],
 })
 export class ContactCardComponent implements OnInit {
   
-  contacts: ICard[] = [];
+  allContacts: ICard[] = [];
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private contactService: ContactService) {}
 
   ngOnInit(): void {
-    this.contacts = Test.contacts;
+    this.fetchContact()
   }
 
   searchText:string = '';
-  hiddenContactCard: boolean = false;
+  // hiddenContactCard: boolean = false;
 
   searchTextChange(searchValue: string) {
     this.searchText= searchValue;
+  }
+
+  fetchContact(){
+    this.contactService.fetchContact()
+    .subscribe((contacts) => {this.allContacts = contacts});
   }
 
   showDetail(data: ICard){
@@ -36,13 +42,14 @@ export class ContactCardComponent implements OnInit {
     const dialogRef = this.dialog.open(EditContactComponent, {
       data: data,
     });
-
     dialogRef.afterClosed().subscribe(result => {
-      result = data;
+      result = data
       console.log(result);
     });
   }
-  deleteContact(data: ICard){
-    Test.deleteContact(data)
+
+  deleteContact(id: string){
+    this.contactService.deleteContact(id);
   }
+  
 }

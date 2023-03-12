@@ -2,19 +2,21 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ICard } from '../app.models';
-import { Test } from '../common.utils';
+
+import { ContactService } from '../Service/contact.service';
 
 @Component({
   selector: 'app-edit-contact',
   templateUrl: './edit-contact.component.html',
-  styleUrls: ['./edit-contact.component.css']
+  styleUrls: ['./edit-contact.component.css'],
+  providers: [ContactService]
 })
 export class EditContactComponent implements OnInit {
   contact: ICard;
 
   reactiveForm!: FormGroup;
 
-  constructor(public dialogRef: MatDialogRef<EditContactComponent>,
+  constructor(private contactService: ContactService, public dialogRef: MatDialogRef<EditContactComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { 
       this.contact = data;
     }
@@ -27,10 +29,11 @@ export class EditContactComponent implements OnInit {
     })
   }
   onNoClick(): void {
-    this.contact.name = this.reactiveForm.get('name')?.value;
-    this.contact.mobile = this.reactiveForm.get('mobile')?.value;
-    this.contact.email = this.reactiveForm.get('email')?.value;
-    this.contact.image = this.reactiveForm.get('image')?.value;
+    this.contactService.updateContact(this.contact.id, this.reactiveForm.value)
+    // this.contact.name = this.reactiveForm.get('name')?.value;
+    // this.contact.mobile = this.reactiveForm.get('mobile')?.value;
+    // this.contact.email = this.reactiveForm.get('email')?.value;
+    // this.contact.image = this.reactiveForm.get('image')?.value;
     this.dialogRef.close(this.contact);
   }
 

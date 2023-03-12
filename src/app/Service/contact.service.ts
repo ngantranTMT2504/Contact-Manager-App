@@ -1,20 +1,41 @@
-import { EventEmitter } from "@angular/core"
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { map } from "rxjs/operators";
+import { ICard } from '../app.models';
 
+
+@Injectable()
 export class ContactService {
-  contacts = [
-    {name: "Kalin Tran", mobile: "0789456135", email: "kalin@gmail.com", image: '/assets/images/avatar1.png'},
-    {name: "John Constantine", mobile: "0831245321", email: "john@gmail.com", image: '/assets/images/avatar2.png'},
-    {name: "Johnathan Ngo", mobile: "0789352894", email: "johnathan@gmail.com", image: '/assets/images/avatar3.png'},
-    {name: "Scristian", mobile: "0381967211", email: "Scristian@gmail.com", image: '/assets/images/avatar4.jpg'}
-  ]
-  
-  addContact(name: string, mobile:string, email:string, image:string){
-    this.contacts.push({name: name, mobile: mobile, email: email, image:image})
+  constructor(private http : HttpClient){}
+
+  createContact(contacts:{name: string,mobile: string,email: string,image: string}){
+    this.http.post('https://contact-manager-411f0-default-rtdb.firebaseio.com/contacts.json', contacts)
+    .subscribe((res) => {console.log(res)});
   }
 
-  onViewButtonClick= new EventEmitter<{name: string, mobile: string, email: string, image: string}>();
+  fetchContact(){
+    return this.http.get('https://contact-manager-411f0-default-rtdb.firebaseio.com/contacts.json')
+    .pipe(map((res)=> {
+      const contacts = [];
+      for(const key in res){
+        contacts.push({...res[key],id: key})
+      }
+      return contacts;
+    }))
+  }
 
-  showContactDetails(contact:{ name: string, mobile: string, email: string, image: string}){
-    this.onViewButtonClick.emit(contact);
+  updateContact(id: string, contact: ICard){
+    this.http.put('https://contact-manager-411f0-default-rtdb.firebaseio.com/contacts/'+id+'.json', contact)
+    .subscribe();
+  }
+
+  deleteContact(id: string){
+    this.http.delete('https://contact-manager-411f0-default-rtdb.firebaseio.com/contacts/'+id+'.json')
+    .subscribe();
+  }
+
+  clearContact(){
+    this.http.delete('https://contact-manager-411f0-default-rtdb.firebaseio.com/contacts.json')
+    .subscribe();
   }
 }

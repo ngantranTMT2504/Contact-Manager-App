@@ -3,7 +3,7 @@
         <app-search (searchChange)="searchTextChange($event)"></app-search>
     </div>
     <div class="mainPage" >
-        <div class="card" *ngFor="let contact of contacts">
+        <div class="card" *ngFor="let contact of allContacts">
             <div class="contactCard" *ngIf="searchText === ''||(contact.name.toLowerCase().includes(searchText)||contact.mobile.includes(searchText))">
                 <div class="avatar">
                     <img [src]="contact.image" alt="avatar">
@@ -16,7 +16,7 @@
                 <div class="button">
                     <button mat-raised-button (click)="showDetail(contact)"><i class="fa-solid fa-eye"></i></button>
                     <button mat-raised-button (click)="showEditdetail(contact)"><i class="fa-solid fa-pen"></i></button>
-                    <button mat-raised-button (click)="deleteContact(contact)"><i class="fa-solid fa-trash"></i></button>
+                    <button mat-raised-button (click)="deleteContact(contact.id)"><i class="fa-solid fa-trash"></i></button>
                 </div>
             </div>
         </div>

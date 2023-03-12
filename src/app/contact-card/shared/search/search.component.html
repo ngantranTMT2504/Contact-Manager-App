@@ -1,4 +1,5 @@
 <div class="search-box">
     <input type="text" [(ngModel)] = 'searchValue' (input)="onSearchValueChange()" >
-    <button class="mat-raised-button" (click)="openAddContactComp()"> <i class="fa-solid fa-plus"></i> New </button>
+    <button class="mat-raised-button" (click)="openAddContactComp()"> + New </button>
+    <button class="mat-raised-button" (click)="clear()"> Delete All </button>
 </div>

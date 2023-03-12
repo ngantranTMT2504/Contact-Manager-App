@@ -1,43 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Test } from '../common.utils';
+import { ContactService } from '../Service/contact.service';
+
 
 
 
 @Component({
   selector: 'app-add-contact',
   templateUrl: './add-contact.component.html',
-  styleUrls: ['./add-contact.component.css']
+  styleUrls: ['./add-contact.component.css'],
+  providers: [ContactService]
 })
 export class AddContactComponent implements OnInit {
 
   reactiveForm!: FormGroup;
-
-  constructor() {}
+  
+  constructor(private contactService : ContactService) {}
 
   ngOnInit(): void {
     this.reactiveForm = new FormGroup({
       name: new FormControl('', Validators.required),
-      mobile: new FormControl('', Validators.required),
+      mobile: new FormControl('', [Validators.required, Validators.maxLength(10)]),   
       email: new FormControl('', [Validators.required, Validators.email]),
       image: new FormControl('', Validators.required)
-    });
+    })
   }
 
-  addContact() {
-    Test.addContact(this.reactiveForm.get('name')?.value,
-    this.reactiveForm.get('mobile')?.value,
-    this.reactiveForm.get('email')?.value,
-    this.reactiveForm.get('image')?.value);
-    console.log(Test.contacts);
-  }
-  
-
-  getErrorMessage() {
-    if (this.reactiveForm.get('email')?.hasError('required')) {
-      return 'You must enter a value';
-    }
-    return this.reactiveForm.get('email')?.hasError('email') ? 'Not a valid email' : '';
+  createContact(contacts:{name: string,mobile: string,email: string,image: string}) {
+    this.contactService.createContact(contacts);
+    this.reactiveForm.reset();
   }
   
 }
